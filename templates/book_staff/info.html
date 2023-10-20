@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ book.bookname }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/book_info.css') }}">
+</head>
+<body>
+     <div class="book-content">
+         <img src="{{ url_for('static', filename='img/toby_dog.jpg') }}" alt="" width="100px">
+         <div class="book-info">
+             <div class="info-item">
+                 <div class="info-label">ID:</div>
+                 <div class="info-value">{{ book.id }}</div>
+             </div>
+             <div class="info-item">
+                 <div class="info-label">NAME:</div>
+                 <div class="info-value">{{ book.bookname }}</div>
+             </div>
+             <div class="info-item">
+                 <div class="info-label">AUTHOR:</div>
+                 <div class="info-value">{{ book.author }}</div>
+             </div>
+             <div class="info-item">
+                 <div class="info-label">PUBLISHER:</div>
+                 <div class="info-value">{{ book.publisher.username }}</div>
+             </div>
+             <div class="info-item">
+                 <div class="info-label">PUBLISH TIME:</div>
+                 <div class="info-value">{{ book.publish_time }}</div>
+             </div>
+         </div>
+         <form method="post" action="{{ url_for('book.public_tag') }}" class="add-tag">
+
+             <input type="text" id="add-tag" name="name">
+             <input type="hidden" id="book-id" name="book_id" value="{{ book.id }}">
+             <input id="submit" type="submit" value="ADD" ></input>
+         </form>
+         <div class="tags">
+             {% for tag in book.tags %}
+                 <div class="tag">{{ tag.name }}</div>
+             {% endfor %}
+         </div>
+     </div>
+
+</body>
+</html>

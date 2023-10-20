@@ -1,0 +1,204 @@
+body{
+    background: black;
+    color:white;
+    overflow: hidden;
+    padding-top:100px
+}
+.form-item span{
+    display: inline-block;
+    width:150px;
+    text-align: right;
+}
+.form-item input{
+    border-radius:0;
+    background: black;
+    border:1px solid #00ff00;
+    color:#00ff00;
+    outline:none
+}
+.form-item input:focus,
+.form-item input:focus-visible{
+    border-radius:0;
+    border-color:#ff0000;
+}
+.form-item button{
+    border-radius:0;
+    background: lime;
+    border:none;
+    cursor: pointer;
+}
+.form-item .tip{
+    text-shadow: #ff00c9 2px 2px 2px, #00ffcf -2px -2px 2px;
+    color: #ffffff;
+    display: inline-block;
+    animation: tip_shake 0.5s ease-in-out infinite;
+}
+@keyframes tip_shake {
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-3px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+.ad img{
+    position:absolute;
+    top:0px;
+    z-index:1;
+    animation: toby_run 3s infinite ease-in-out;
+}
+
+@keyframes toby_run {
+    0%{
+        left:0px;
+        z-index:3;
+    }
+    5%{
+        left:0px;
+        transform: rotateY(180deg);
+        z-index:3;
+    }
+    45%{
+        left:300px;
+        transform: rotateY(180deg);
+        z-index:3;
+    }
+    50%{
+        left:300px;
+        transform: rotateY(0deg);
+        z-index:1;
+    }
+    100%{
+        left:0px;
+        transform: rotateY(0deg);
+        z-index:1;
+    }
+}
+.foot-add{
+    width: calc(100px * 24);
+    opacity: 0.5;
+    animation:toby_scroll 10s infinite linear;
+}
+.foot-add:nth-child(2n) img{
+    transform: rotateY(180deg);
+}
+.foot-add:nth-child(2n) {
+    animation:toby_scroll_right 10s infinite linear;
+}
+@keyframes toby_scroll {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-1047px);
+    }
+}
+@keyframes toby_scroll_right {
+    0%{
+        transform: translateX(-1047px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+.title{
+    position:absolute;
+    left:50px;
+    top:0px;
+    z-index:2;
+}
+.title h1{
+    text-shadow: #ff00c9 2px 2px 2px, #00ffcf -2px -2px 2px;
+    display: block;
+    float: left;
+    margin-right: 50px;
+    font-size:50px;
+    animation:text_jump 2s ease-out infinite;
+}
+.title h1:nth-child(2){
+    animation-delay:0.5s ;
+}
+.title h1:nth-child(3){
+    animation-delay:1s ;
+}
+.title h1:nth-child(4){
+    animation-delay:1.5s ;
+}
+@keyframes text_jump {
+    0%{
+        transform: translateY(0px);
+    }
+    17.5%{
+
+        transform: translateY(-20px);
+    }
+    25%{
+        transform: translateY(0px);
+    }
+}
+#counter{
+    display: none;
+    text-shadow: #ff00c9 2px 2px 2px, #00ffcf -2px -2px 2px;
+    font-size:50px;
+    font-weight: bold;
+    line-height: 300px;
+    text-align: center;
+    border-left: 10px groove#ff0093;
+    border-top: 10px groove #ff0093;
+    border-right: 10px groove #00ffff;
+    border-bottom: 10px groove #00ffff;
+    box-shadow: #09dbff5e 10px 10px 10px, #ff09c35e -10px -10px 10px;
+    background: #000000;
+    width:300px;
+    height: 300px;
+    color:white;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translateX(-50%) translateY(-50%);
+    transform-origin: center;
+    animation: counter 1s ease-in-out infinite;
+
+}
+@keyframes counter{
+    0%{
+        transform: translateX(-50%) translateY(-50%) rotateY(180deg);
+        opacity: 0;
+        filter: brightness(1);
+    }
+    50%{
+        transform: translateX(-50%) translateY(-50%) rotateY(0deg);
+        opacity: 1;
+        filter: brightness(2);
+    }
+    100%{
+        transform:  translateX(-50%) translateY(-50%) rotateY(180deg);
+        opacity: 0;
+        filter: brightness(1);
+    }
+}
+#submit-btn{
+    margin-top:10px;
+    width: 332px;
+    background: black;
+    color: white;
+    outline: none;
+    border-top: 1px solid #00ffff;
+    border-right: 3px double #028c84;
+    box-shadow: #00ffff 0px 0px 10px, #ff00fb 0px 0px 30px, #7d00ff 0px 0px 20px;
+    border-bottom: 1px solid #00ffbc;
+    animation: turn_color 3s infinite linear;
+}
+@keyframes turn_color {
+    0%{
+        filter:hue-rotate(0deg);
+    }
+    100%{
+        filter:hue-rotate(360deg);
+    }
+}

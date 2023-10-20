@@ -1,0 +1,17 @@
+{% extends 'book_staff/annoying_ad.html' %}
+
+{% block title %}Public{% endblock %}
+
+{% block content %}
+    <form action="" method="post">
+        <div class="form-item">
+            <span>book name: </span>
+            <input type="text" id="bookname" name="bookname">
+        </div>
+        <div class="form-item">
+            <span>author: </span>
+            <input type="text" id="author" name="author">
+        </div>
+        <input type="submit" id="submit-btn" value="submit">
+    </form>
+{% endblock %}

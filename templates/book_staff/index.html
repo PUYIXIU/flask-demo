@@ -1,0 +1,10 @@
+{% extends 'book_staff/annoying_ad.html' %}
+
+{% block title %}
+{{ user.username }}
+{% endblock %}
+
+{% block content %}
+<span>{{ user.username }}</span>
+<a href="{{ url_for('index.logout') }}">Logout</a>
+{% endblock %}

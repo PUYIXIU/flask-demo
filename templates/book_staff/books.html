@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for("static", filename='css/book_list.css') }}">
+</head>
+<body>
+    <a class="publish-a" href="{{ url_for('book.public') }}">Go to publish!</a>
+    <form action="{{ url_for('book.search') }}" method="get" >
+        <input type="text" name="name">
+        <input type="submit" value="search">
+    </form>
+    <ul class="book-ul">
+        {% for book in books %}
+        <a class="book-li" href="{{ url_for("book.info", id=book.id) }}">
+            <img src="{{ url_for('static', filename='img/toby_dog.jpg') }}" alt="" width="100px">
+            <div class="book-info">
+                <div class="book-info-item book-id">ID: {{ book.id }}</div>
+                <div class="book-info-item book-name">Name: {{ book.bookname }}</div>
+                <div class="book-info-item book-author">Author: {{ book.author }}</div>
+            </div>
+        </a>
+        {% endfor %}
+    </ul>
+</body>
+</html>

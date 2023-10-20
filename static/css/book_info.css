@@ -1,0 +1,98 @@
+body{
+    background: black;
+    color:white;
+    width:100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-content{
+    border:1px solid #fff;
+    width:50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    padding:5px;
+    align-items:center;
+}
+.book-info{
+    padding:5px;
+    border:1px solid #fff;
+    box-shadow: inset -50px 0px 50px 50px rgba(255, 0, 229, 0.3), inset 50px 0px 50px 20px #00ffff33;
+    animation: color_change 1s linear infinite;
+}
+.info-item{
+    width: 100%;
+    display: flex;
+    line-height: 25px;
+}
+.info-label{
+    /*width: 50%;*/
+    margin-right: 15px;
+    font-weight: bold;
+    color: #ffffff;
+}
+.info-value{
+    color: #ffffff;
+}
+.add-tag{
+    width: 100%;
+    display: flex;
+    padding:5px;
+}
+.add-tag input{
+    flex-grow: 1;
+    background: none;
+    border:none;
+    outline:none;
+    color:#fff;
+    border-bottom: 1px solid #fff;
+}
+.add-tag #submit{
+    border-radius: 0px;
+    border: none;
+    color:white;
+    cursor:pointer;
+    outline:none;
+    text-decoration: none;
+    padding:3px;
+    transition:all linear 0.3s;
+    background: #00ff00;
+    box-shadow: 0px 0px 5px #00ff00,
+                0px 0px 10px  #00ff00;
+
+    animation: color_change 1s linear infinite;
+}
+.add-tag button:hover{
+    box-shadow: 0px 0px 5px #00ff00,
+                0px 0px 10px  #00ff00,
+                0px 0px 25px  #00ff00,
+                0px 0px 50px  #00ff00,
+                0px 0px 75px  #00ff00,
+                0px 0px 100px  #00ff00;
+}
+.tags{
+    height: 100px;
+    overflow-y: scroll;
+}
+.tags::-webkit-scrollbar{
+    width: 0px;
+}
+.tag{
+    float: left;
+    border:1px solid #fff;
+    padding:3px;
+    margin:3px;
+    height: 20px;
+}
+@keyframes color_change {
+    0%{
+        filter:hue-rotate(0deg);
+    }
+    100%{
+        filter:hue-rotate(360deg);
+    }
+}

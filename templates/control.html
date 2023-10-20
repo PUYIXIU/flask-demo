@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if age>65 %}
+    <p>可以退休了</p>
+    {% elif age>18 %}
+    <p>壮丁</p>
+    {% else %}
+    <p>未成年</p>
+    {% endif %}
+
+    <hr>
+
+    {% for i in arr %}
+        <li>{{ i }}</li>
+    {% endfor %}
+</body>
+</html>
